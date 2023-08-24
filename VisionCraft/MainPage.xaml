@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
+    <!--muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"-->
 
     <Page.Resources>
         <Thickness x:Key="NavigationViewContentMargin">0,48,0,0</Thickness>
@@ -42,15 +43,19 @@
                              ItemInvoked="NavigationViewControl_OnItemInvoked"
                              Canvas.ZIndex="0">
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem Icon="Home" Content="Home" Tag="_home"/>
-                <muxc:NavigationViewItem Icon="Target" Content="Second" Tag="Second"/>
+                <muxc:NavigationViewItem Icon="Home" Content="Home" Tag="_home" IsEnabled="True"/>
+                <muxc:NavigationViewItem Icon="Edit" Content="Labeling" Tag="_labeling" IsEnabled="False"/>
+                <muxc:NavigationViewItem Icon="FontSize" Content="Augmentation" Tag="_augmentation" IsEnabled="False"/>
+                <muxc:NavigationViewItem Icon="SaveLocal" Content="Training" Tag="_training" IsEnabled="False"/>
             </muxc:NavigationView.MenuItems>
             <Grid>
-                <Frame x:Name="contentFrame" Padding="0">
+                <Frame x:Name="contentFrame" Padding="10">
                     <Grid>
                     </Grid>
                 </Frame>
+                
             </Grid>
         </muxc:NavigationView>
+
     </Grid>
 </Page>

@@ -122,7 +122,26 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Boundary.cs" />
+    <Compile Include="Model\LabelClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Label.cs" />
+    <Compile Include="Static\Config.cs" />
+    <Compile Include="View\AugmentationPage.xaml.cs">
+      <DependentUpon>AugmentationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LabelingPage.xaml.cs">
+      <DependentUpon>LabelingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrainingPage.xaml.cs">
+      <DependentUpon>TrainingPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -148,6 +167,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\AugmentationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LabelingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrainingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -158,10 +197,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Service\" />
     <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

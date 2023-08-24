@@ -39,6 +39,9 @@ namespace VisionCraft {
 
             //Register a handler for when the window changes focus
             Window.Current.Activated += Current_Activated;
+
+            // DESC: Start Page - View/HomePage.xaml
+            contentFrame.Navigate(typeof(View.HomePage));
         }
 
         private void CoreTitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args) {
@@ -105,7 +108,7 @@ namespace VisionCraft {
 
             switch(args.InvokedItemContainer.Tag) {
                 case "_home":
-                    //contentFrame.Navigate(typeof(View.Home));
+                    contentFrame.Navigate(typeof(View.HomePage));
                     var dialog = new MessageDialog("Test");
                     dialog.ShowAsync();
                     break;

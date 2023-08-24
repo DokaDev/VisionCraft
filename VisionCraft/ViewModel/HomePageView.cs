@@ -1,8 +1,16 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System.Diagnostics;
+using GalaSoft.MvvmLight;
 
 namespace VisionCraft.ViewModel {
     public class HomePageView : ViewModelBase {
-        private bool isProjectOpened = false;
+        private string _windowTitle;
+
+        public string WindowTitle {
+            get => _windowTitle;
+            set => Set(ref _windowTitle, value); // INotifyPropertyChanged Alert
+        }
+
+        private bool isProjectOpened;
 
         public bool IsProjectOpened {
             get => isProjectOpened;
@@ -12,15 +20,26 @@ namespace VisionCraft.ViewModel {
             }
         }
 
-        public bool OpenButtonStatus { get; private set; }
+        private bool _navigationItemStatus;
 
-        private void UpdateStatus() {
-            if (isProjectOpened) {
-                OpenButtonStatus = !isProjectOpened;
-            }
+        public bool NavigationItemStatus {
+            get => _navigationItemStatus;
+            set => Set(ref _navigationItemStatus, value);
         }
 
-        public HomePageView() {
+        
+        public bool OpenProjectButtonStatus { get; set; }
+
+        private void UpdateStatus() {
+            Debug.WriteLine("CheckPoint 1");
+            OpenProjectButtonStatus = !isProjectOpened;
+            Debug.WriteLine("CheckPoint 2 " + OpenProjectButtonStatus.ToString());
+            NavigationItemStatus = isProjectOpened;
+            Debug.WriteLine("CheckPoint 3 " + NavigationItemStatus.ToString());
+        }
+
+        public HomePageView(string title = "Vision Craft") {
+            WindowTitle = title;
             IsProjectOpened = Static.Config.IsProjectOpened;
         }
     }

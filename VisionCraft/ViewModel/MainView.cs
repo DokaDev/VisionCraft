@@ -1,9 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
-using System.Windows.Input;
-using Windows.UI.Popups;
+﻿using GalaSoft.MvvmLight;
 
 namespace VisionCraft.ViewModel {
     public class MainView : ViewModelBase {
@@ -13,8 +8,6 @@ namespace VisionCraft.ViewModel {
             get => _windowTitle;
             set => Set(ref _windowTitle, value); // INotifyPropertyChanged Alert
         }
-
-        public ICommand CheckFileSystemStatus;
 
         private bool _isNavigationItemValidate;
 
@@ -26,11 +19,6 @@ namespace VisionCraft.ViewModel {
         public MainView(string title = "Vision Craft") {
             // DESC: UI Caption Processing
             WindowTitle = title;
-
-            CheckFileSystemStatus = new RelayCommand(ValidatePath);
-        }
-        private async void ValidatePath() {
-            // TODO: Pref..
         }
     }
 }

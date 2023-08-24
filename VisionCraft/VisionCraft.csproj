@@ -130,7 +130,6 @@
     <Compile Include="Static\Config.cs" />
     <Compile Include="ViewModel\HomePageView.cs" />
     <Compile Include="ViewModel\LabelingPage.cs" />
-    <Compile Include="ViewModel\MainView.cs" />
     <Compile Include="ViewModel\NewProjectViewModel.cs" />
     <Compile Include="View\AugmentationPage.xaml.cs">
       <DependentUpon>AugmentationPage.xaml</DependentUpon>

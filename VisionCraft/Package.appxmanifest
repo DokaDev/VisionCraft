@@ -46,6 +46,5 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <Capability Name="broadFileSystemAccess" />
   </Capabilities>
 </Package>

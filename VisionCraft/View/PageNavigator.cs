@@ -4,10 +4,7 @@ using Windows.UI.Xaml.Controls;
 namespace VisionCraft.View {
     public static class PageNavigator {
         public static Frame Frame;
-
-        public enum SubPage {
-            NewProject = 1,
-        }
+        
 
         public static void NavigatePage(string tag) {
             // Navigation Page Logic

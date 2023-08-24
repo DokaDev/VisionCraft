@@ -14,10 +14,7 @@
 
         <StackPanel Orientation="Horizontal">
             <Button Content="New Project" Foreground="White" Width="300" Height="100" Background="Red" Padding="10" Margin="10" Click="ButtonBase_OnClick"/>
-            <Button Width="100" Height="100" Background="GreenYellow" Padding="10" Margin="10"/>
-            <Button Width="100" Height="100" Background="Yellow" Padding="10" Margin="10"/>
-            <Button Width="100" Height="100" Background="Cyan" Padding="10" Margin="10"/>
-
+            <Button Content="Open Project" Width="300" Height="100" Background="GreenYellow" Padding="10" Margin="10" IsEnabled="{Binding OpenButtonStatus}"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -7,6 +7,8 @@ using VisionCraft.Model;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Popups;
+using VisionCraft.Static;
+using VisionCraft.View;
 
 namespace VisionCraft.ViewModel {
     public class NewProjectViewModel : ViewModelBase {
@@ -15,6 +17,8 @@ namespace VisionCraft.ViewModel {
         private string _projectPath;
 
         private string _dirView;
+
+        private StorageFolder projectFolder;
 
         public Project Project {
             get => _project;
@@ -72,22 +76,23 @@ namespace VisionCraft.ViewModel {
             await c.ShowAsync();
 
             // 프로젝트 디렉토리 경로
-            string projectDir = $"{ProjectPath}\\{ProjectName}";
+            await projectFolder.CreateFolderAsync($"{ProjectName}");
 
-            // 프로젝트 디렉토리 생성
+            //Project Directory
+            await projectFolder.CreateFolderAsync($"{ProjectName}\\Labels");
+            await projectFolder.CreateFolderAsync($"{ProjectName}\\Images");
+            await projectFolder.CreateFolderAsync($"{ProjectName}\\Augmentation");
+            await projectFolder.CreateFolderAsync($"{ProjectName}\\Train");
 
-            StorageFolder folder; // 이걸 활용해야 할 것 같아.
-            Directory.CreateDirectory(projectDir);
-
-            // 하위 디렉토리들 생성
-            Directory.CreateDirectory(Path.Combine(projectDir, "Labels"));
-            Directory.CreateDirectory(Path.Combine(projectDir, "Images"));
-            Directory.CreateDirectory(Path.Combine(projectDir, "Augmentation"));
-            Directory.CreateDirectory(Path.Combine(projectDir, "Train"));
+            // Project File
+            await projectFolder.CreateFileAsync($"{ProjectName}\\{ProjectName}.vcn");
 
             // 프로젝트 생성 완료 메시지
             var messageDialog = new MessageDialog("Project created successfully!");
             await messageDialog.ShowAsync();
+
+            Static.Config.IsProjectOpened = true;
+            PageNavigator.NavigatePage("_home");
         }
 
         private void UpdateDirView() {
@@ -98,11 +103,13 @@ namespace VisionCraft.ViewModel {
             var folderPicker = new FolderPicker();
             folderPicker.FileTypeFilter.Add("*");
 
-            StorageFolder folder = await folderPicker.PickSingleFolderAsync();
-            if(folder != null) {
-                ProjectPath = folder.Path;
+            projectFolder = await folderPicker.PickSingleFolderAsync();
+            if(projectFolder != null) {
+                ProjectPath = projectFolder.Path;
                 //var a = new MessageDialog($"{folder.Path}");
                 //await a.ShowAsync();
+
+                Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.AddOrReplace("PickedFolderToken", projectFolder);
             } else {
                 var a = new MessageDialog("Canceled!!");
                 await a.ShowAsync();

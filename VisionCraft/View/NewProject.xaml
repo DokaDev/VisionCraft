@@ -15,7 +15,7 @@
             <TextBlock FontSize="17" FontWeight="Normal" Margin="0, 10, 0, 0">Vision AI Project</TextBlock>
 
             <TextBlock FontWeight="Normal" Margin="0, 30, 0, 0">Project Name</TextBlock>
-            <TextBox Text="{Binding ProjectName, Mode=TwoWay}" Margin="0, 10, 0, 0" Width="300" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding ProjectName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0, 10, 0, 0" Width="300" HorizontalAlignment="Left"/>
             
             <TextBlock FontWeight="Normal" Margin="0, 30, 0, 0">Location</TextBlock>
             <StackPanel Orientation="Horizontal" Margin="0, 10 0, 0">
@@ -27,6 +27,6 @@
             <TextBlock Text="{Binding DirView}" FontWeight="Normal" Margin="0, 30, 0, 0"></TextBlock>
             
         </StackPanel>
-        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="30, 10, 30, 10">Submit</Button>
+        <Button Command="{Binding CreateProjectCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="30, 10, 30, 10">Create</Button>
     </Grid>
 </Page>

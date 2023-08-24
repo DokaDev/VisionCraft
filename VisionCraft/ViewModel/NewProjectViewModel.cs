@@ -53,13 +53,31 @@ namespace VisionCraft.ViewModel {
             private set => Set(ref _dirView, value);
         }
 
-        private void CreateProject() {
+        private async void CreateProject() {
+            // DESC: Validate Field
+            if (String.IsNullOrEmpty(ProjectName)) {
+                var a = new MessageDialog("Project Name filed is empty!");
+                await a.ShowAsync();
+                return;
+            }
+
+            if (String.IsNullOrEmpty(ProjectPath)) {
+                var b = new MessageDialog("Invalid Project Path");
+                await b.ShowAsync();
+                return;
+            }
+
+            var c = new MessageDialog("Create Project!!");
+            await c.ShowAsync();
+
+
+
             // 프로젝트 생성 로직
             // 디렉토리 생성, 파일 생성 등
         }
 
         private void UpdateDirView() {
-            DirView = $"your project will be created in '{ProjectPath}{ProjectName}'";
+            DirView = $"your project will be created in '{ProjectPath}\\{ProjectName}'";
         }
 
         private async void GetDirectory() {

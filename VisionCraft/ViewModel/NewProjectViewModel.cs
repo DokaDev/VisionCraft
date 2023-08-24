@@ -17,17 +17,26 @@ namespace VisionCraft.ViewModel {
 
         public Project Project {
             get => _project;
-            set => Set(ref _project, value);
+            set {
+                Set(ref _project, value);
+                UpdateDirView();
+            }
         }
 
         public string ProjectName {
             get => _projectName;
-            set => Set(ref _projectName, value);
+            set {
+                Set(ref _projectName, value);
+                UpdateDirView();
+            }
         }
 
         public string ProjectPath {
             get => _projectPath;
-            set => Set(ref _projectPath, value);
+            set {
+                Set(ref _projectPath, value);
+                UpdateDirView();
+            }
         }
 
         public ICommand CreateProjectCommand { get; }
@@ -36,12 +45,21 @@ namespace VisionCraft.ViewModel {
         public NewProjectViewModel() {
             CreateProjectCommand = new RelayCommand(CreateProject);
             GetDirectoryCommand = new RelayCommand(GetDirectory);
+            UpdateDirView();
             //Project = new Project();
+        }
+        public string DirView {
+            get => _dirView;
+            private set => Set(ref _dirView, value);
         }
 
         private void CreateProject() {
             // 프로젝트 생성 로직
             // 디렉토리 생성, 파일 생성 등
+        }
+
+        private void UpdateDirView() {
+            DirView = $"your project will be created in '{ProjectPath}{ProjectName}'";
         }
 
         private async void GetDirectory() {

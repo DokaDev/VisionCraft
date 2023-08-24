@@ -38,7 +38,6 @@
         </Border>
         <muxc:NavigationView x:Name="NavigationViewControl"
                              IsTitleBarAutoPaddingEnabled="False"            
-                             IsBackButtonVisible="Visible"
                              DisplayModeChanged="NavigationViewControl_DisplayModeChanged"
                              ItemInvoked="NavigationViewControl_OnItemInvoked"
                              Canvas.ZIndex="0">
@@ -47,6 +46,7 @@
                 <muxc:NavigationViewItem Icon="Edit" Content="Labeling" Tag="_labeling" IsEnabled="False"/>
                 <muxc:NavigationViewItem Icon="FontSize" Content="Augmentation" Tag="_augmentation" IsEnabled="False"/>
                 <muxc:NavigationViewItem Icon="SaveLocal" Content="Training" Tag="_training" IsEnabled="False"/>
+                <muxc:NavigationViewItem Icon="Remote" Content="Terminal" Tag="_terminal" IsEnabled="False"/>
             </muxc:NavigationView.MenuItems>
             <Grid>
                 <Frame x:Name="contentFrame" Padding="10">

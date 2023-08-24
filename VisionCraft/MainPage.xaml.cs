@@ -15,7 +15,6 @@ namespace VisionCraft {
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page {
-        PageNavigator navigator = new PageNavigator();
         public MainPage() {
             this.InitializeComponent();
 
@@ -112,7 +111,7 @@ namespace VisionCraft {
             }
 
             
-            navigator.NavigatePage(args.InvokedItemContainer.Tag.ToString());
+            PageNavigator.NavigatePage(args.InvokedItemContainer.Tag.ToString());
 
             //return;
         }

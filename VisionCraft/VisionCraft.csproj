@@ -140,6 +140,10 @@
     <Compile Include="View\LabelingPage.xaml.cs">
       <DependentUpon>LabelingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NewProject.xaml.cs">
+      <DependentUpon>NewProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PageNavigator.cs" />
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -180,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LabelingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

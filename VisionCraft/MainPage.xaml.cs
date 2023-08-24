@@ -6,6 +6,7 @@ using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using VisionCraft.View;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -14,8 +15,12 @@ namespace VisionCraft {
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page {
+        PageNavigator navigator = new PageNavigator();
         public MainPage() {
             this.InitializeComponent();
+
+            PageNavigator.Frame = this.contentFrame;
+
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
 
             titleBar.ButtonBackgroundColor = Colors.Transparent;
@@ -106,13 +111,10 @@ namespace VisionCraft {
                 return;
             }
 
-            switch(args.InvokedItemContainer.Tag) {
-                case "_home":
-                    contentFrame.Navigate(typeof(View.HomePage));
-                    var dialog = new MessageDialog("Test");
-                    dialog.ShowAsync();
-                    break;
-            }
+            
+            navigator.NavigatePage(args.InvokedItemContainer.Tag.ToString());
+
+            //return;
         }
     }
 }

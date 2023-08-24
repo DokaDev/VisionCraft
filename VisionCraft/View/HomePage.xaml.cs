@@ -17,17 +17,18 @@ namespace VisionCraft.View {
         }
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e) {
-            var folderPicker = new FolderPicker();
-            folderPicker.FileTypeFilter.Add("*");
 
-            StorageFolder folder = await folderPicker.PickSingleFolderAsync();
-            if (folder != null) {
-                var a = new MessageDialog($"{folder.Path}");
-                await a.ShowAsync();
-            }
-            else {
+            //var folderPicker = new FolderPicker();
+            //folderPicker.FileTypeFilter.Add("*");
 
-            }
+            //StorageFolder folder = await folderPicker.PickSingleFolderAsync();
+            //if (folder != null) {
+            //    var a = new MessageDialog($"{folder.Path}");
+            //    await a.ShowAsync();
+            //}
+            //else {
+
+            //}
         }
     }
 }

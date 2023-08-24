@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
+using System.IO;
 using System.Windows.Input;
 using VisionCraft.Model;
 using Windows.Storage;
@@ -70,10 +71,23 @@ namespace VisionCraft.ViewModel {
             var c = new MessageDialog("Create Project!!");
             await c.ShowAsync();
 
+            // 프로젝트 디렉토리 경로
+            string projectDir = $"{ProjectPath}\\{ProjectName}";
 
+            // 프로젝트 디렉토리 생성
 
-            // 프로젝트 생성 로직
-            // 디렉토리 생성, 파일 생성 등
+            StorageFolder folder; // 이걸 활용해야 할 것 같아.
+            Directory.CreateDirectory(projectDir);
+
+            // 하위 디렉토리들 생성
+            Directory.CreateDirectory(Path.Combine(projectDir, "Labels"));
+            Directory.CreateDirectory(Path.Combine(projectDir, "Images"));
+            Directory.CreateDirectory(Path.Combine(projectDir, "Augmentation"));
+            Directory.CreateDirectory(Path.Combine(projectDir, "Train"));
+
+            // 프로젝트 생성 완료 메시지
+            var messageDialog = new MessageDialog("Project created successfully!");
+            await messageDialog.ShowAsync();
         }
 
         private void UpdateDirView() {

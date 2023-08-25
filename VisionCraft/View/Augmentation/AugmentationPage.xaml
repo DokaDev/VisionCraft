@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="VisionCraft.View.AugmentationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VisionCraft.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
+
+    <Grid Padding="30">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+            <TextBlock FontSize="25" FontWeight="Normal">Augmentation</TextBlock>
+            <TextBlock FontSize="17" FontWeight="Normal" Margin="0, 10, 0, 0">Vision AI Project</TextBlock>
+
+            <TextBlock FontWeight="Normal" Margin="0, 30, 0, 0">Project Name</TextBlock>
+            <TextBox Margin="0, 10, 0, 0" Width="300" HorizontalAlignment="Left"/>
+
+        </StackPanel>
+        <Button Command="{Binding CreateProjectCommand}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="30, 10, 30, 10">Create</Button>
+    </Grid>
+</Page>

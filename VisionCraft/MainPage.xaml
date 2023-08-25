@@ -43,10 +43,10 @@
                              Canvas.ZIndex="0">
             <muxc:NavigationView.MenuItems>
                 <muxc:NavigationViewItem Icon="Home" Content="Home" Tag="_home" IsEnabled="True"/>
-                <muxc:NavigationViewItem Icon="Edit" Content="Labeling" Tag="_labeling" IsEnabled="{Binding NavigationItemStatus, UpdateSourceTrigger=PropertyChanged}"/>
-                <muxc:NavigationViewItem Icon="FontSize" Content="Augmentation" Tag="_augmentation" IsEnabled="{Binding NavigationItemStatus}"/>
-                <muxc:NavigationViewItem Icon="SaveLocal" Content="Training" Tag="_training" IsEnabled="{Binding NavigationItemStatus}"/>
-                <muxc:NavigationViewItem Icon="Remote" Content="Terminal" Tag="_terminal" IsEnabled="{Binding NavigationItemStatus}"/>
+                <muxc:NavigationViewItem Icon="Edit" Content="Labeling" Tag="_labeling" IsEnabled="True"/>
+                <muxc:NavigationViewItem Icon="FontSize" Content="Augmentation" Tag="_augmentation" IsEnabled="True"/>
+                <muxc:NavigationViewItem Icon="SaveLocal" Content="Training" Tag="_training" IsEnabled="True"/>
+                <muxc:NavigationViewItem Icon="Remote" Content="Terminal" Tag="_terminal" IsEnabled="True"/>
             </muxc:NavigationView.MenuItems>
             <Grid>
                 <Frame x:Name="contentFrame" Padding="10">

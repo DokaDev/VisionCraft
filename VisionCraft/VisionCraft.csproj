@@ -128,26 +128,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Label.cs" />
     <Compile Include="Static\Config.cs" />
-    <Compile Include="ViewModel\HomePageView.cs" />
-    <Compile Include="ViewModel\LabelingPage.cs" />
-    <Compile Include="ViewModel\NewProjectViewModel.cs" />
-    <Compile Include="View\AugmentationPage.xaml.cs">
+    <Compile Include="ViewModel\Home\HomePageView.cs" />
+    <Compile Include="ViewModel\Home\NewProject\NewProjectViewModel.cs" />
+    <Compile Include="ViewModel\Labeling\LabelingView.cs" />
+    <Compile Include="View\Augmentation\AugmentationPage.xaml.cs">
       <DependentUpon>AugmentationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HomePage.xaml.cs">
+    <Compile Include="View\Home\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LabelingPage.xaml.cs">
+    <Compile Include="View\Labeling\LabelingPage.xaml.cs">
       <DependentUpon>LabelingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\NewProject.xaml.cs">
+    <Compile Include="View\Home\NewProject\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PageNavigator.cs" />
-    <Compile Include="View\SettingsPage.xaml.cs">
+    <Compile Include="View\Settings\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TrainingPage.xaml.cs">
+    <Compile Include="View\Training\TrainingPage.xaml.cs">
       <DependentUpon>TrainingPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -175,27 +175,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\AugmentationPage.xaml">
+    <Page Include="View\Augmentation\AugmentationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\HomePage.xaml">
+    <Page Include="View\Home\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\LabelingPage.xaml">
+    <Page Include="View\Labeling\LabelingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\NewProject.xaml">
+    <Page Include="View\Home\NewProject\NewProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SettingsPage.xaml">
+    <Page Include="View\Settings\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TrainingPage.xaml">
+    <Page Include="View\Training\TrainingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

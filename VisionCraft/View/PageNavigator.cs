@@ -12,6 +12,18 @@ namespace VisionCraft.View {
                 case "_home":
                     Frame.Navigate(typeof(HomePage));
                     break;
+                case "_labeling":
+                    Frame.Navigate(typeof(LabelingPage));
+                    break;
+                case "_augmentation":
+                    Frame.Navigate(typeof(AugmentationPage));
+                    break;
+                case "_training":
+                    Frame.Navigate(typeof(TrainingPage));
+                    break;
+                case "terminal":
+                    Frame.Navigate(typeof(TrainingPage));
+                    break;
 
                 default:
                     Debug.WriteLine("It seems not contained Navigation Items.");

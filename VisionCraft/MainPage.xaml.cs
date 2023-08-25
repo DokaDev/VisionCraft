@@ -109,11 +109,10 @@ namespace VisionCraft {
 
         private void NavigationViewControl_OnItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args) {
             if(args.IsSettingsInvoked) {
-                //contentFrame.Navigate(typeof(View.Home));
+                contentFrame.Navigate(typeof(View.SettingPage));
                 return;
             }
 
-            
             PageNavigator.NavigatePage(args.InvokedItemContainer.Tag.ToString());
 
             //return;

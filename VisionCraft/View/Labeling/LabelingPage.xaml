@@ -31,26 +31,5 @@
             <Canvas Background="Aquamarine" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </StackPanel>
         
-
-        <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="DarkGreen">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Background="DeepPink">
-                <TextBlock>Labeling Class</TextBlock>
-                <ListView ItemsSource="{Binding LabelClasses}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Name}" FontSize="13" Margin="10"/>
-                                <TextBlock Text="{Binding Description}" FontSize="13" Margin="10"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
-            <Canvas Background="Aqua" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
-        </StackPanel>-->
-        
-        
-
-        
     </Grid>
 </Page>
